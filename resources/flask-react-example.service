@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask API Service
+After=network.target
+
+[Service]
+User=nisheeth
+WorkingDirectory=/home/nisheeth/Code/flask-react-example/api
+ExecStart=/home/nisheeth/anaconda3/bin/gunicorn -b 127.0.0.1:5000 api:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
